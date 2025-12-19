@@ -1,4 +1,4 @@
-name: Run Test on PR
+name: Run Test on PullR
 
 on:
   pull_request:
