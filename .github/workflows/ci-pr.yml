@@ -1,4 +1,4 @@
-name: Run Test on PRs
+name: Run Test on PR3
 
 on:
   pull_request:
