@@ -46,7 +46,7 @@ jobs:
     name: Deploy to Staging
     environment:
       name: staging
-      url: https://jlgonzales123.github.io/calculator-demo-app-staging/
+      url: https://jlgonzales123.github.io/calculator-demo-app/
 
     steps:
       - name: Download Pages artifact
@@ -64,7 +64,7 @@ jobs:
       - name: Checkout staging repo (main)
         uses: actions/checkout@v4
         with:
-          repository: JLGonzales123/calculator-demo-app-staging
+          repository: JLGonzales123/calculator-demo-app
           ref: main
           token: ${{ secrets.CICD_TOKEN }}
           path: staging
@@ -104,7 +104,7 @@ jobs:
         env:
           TARGET_OWNER: "JLGonzales123"
           TARGET_REPO: "Cucumber_Selenium_CICD"
-          STAGING_URL: "https://jlgonzales123.github.io/calculator-demo-app-staging/"
+          STAGING_URL: "https://jlgonzales123.github.io/calculator-demo-app"
         with:
           github-token: ${{ secrets.CICD_TOKEN }}
           script: |
