@@ -46,7 +46,7 @@ jobs:
     name: Deploy to Staging
     environment:
       name: staging
-      url: https://jlgonzales123.github.io/calculator-demo-app/
+      url: https://jlgonzales123.github.io/calculator-demo-app-staging/
 
     steps:
       - name: Download Pages artifact
@@ -104,7 +104,7 @@ jobs:
         env:
           TARGET_OWNER: "JLGonzales123"
           TARGET_REPO: "Cucumber_Selenium_CICD"
-          STAGING_URL: "https://jlgonzales123.github.io/calculator-demo-app/"
+          STAGING_URL: "https://jlgonzales123.github.io/calculator-demo-app-staging/"
         with:
           github-token: ${{ secrets.CICD_TOKEN }}
           script: |
@@ -155,8 +155,8 @@ jobs:
                 event: 'repository_dispatch',
                 per_page: 20
               });
-
-        
+            
+            
               console.log("Recent runs:", runs.data.workflow_runs.map(r => ({
               id: r.id,
               created_at: r.created_at,
@@ -209,8 +209,9 @@ jobs:
     name: Deploy to Production
     environment:
       name: production
-      url: https://jlgonzales123.github.io/calculator-demo-app-staging/
+      url: https://jlgonzales123.github.io/calculator-demo-app-staging
 
     steps:
       - name: Deploy to GitHub Pages (Production)
         uses: actions/deploy-pages@v4
+ 
